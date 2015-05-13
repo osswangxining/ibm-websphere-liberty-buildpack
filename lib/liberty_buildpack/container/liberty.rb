@@ -90,10 +90,10 @@ module LibertyBuildpack::Container
     def compile
       Liberty.validate(@app_dir)
       @liberty_components_and_uris, @liberty_license = Liberty.find_liberty_files(@app_dir, @configuration)
-      unless LibertyBuildpack::Util.check_license(@liberty_license, @license_id)
-        print "\nYou have not accepted the IBM Liberty License.\n\nVisit the following uri:\n#{@liberty_license}\n\nExtract the license number (D/N:) and place it inside your manifest file as a ENV property e.g. \nENV: \n  IBM_LIBERTY_LICENSE: {License Number}.\n"
-        raise
-      end
+#      unless LibertyBuildpack::Util.check_license(@liberty_license, @license_id)
+#        print "\nYou have not accepted the IBM Liberty License.\n\nVisit the following uri:\n#{@liberty_license}\n\nExtract the license number (D/N:) and place it inside your manifest file as a ENV property e.g. \nENV: \n  IBM_LIBERTY_LICENSE: {License Number}.\n"
+#        raise
+#      end
       download_and_install_liberty
       link_application
       update_server_xml
