@@ -73,10 +73,10 @@ module LibertyBuildpack::Jre
     # @return [void]
     def compile
       @version, @uri, @license = IBMJdk.find_ibmjdk(@configuration)
-      unless LibertyBuildpack::Util.check_license(@license, @license_id)
-        print "\nYou have not accepted the IBM JVM License.\n\nVisit the following uri:\n#{@license}\n\nExtract the license number (D/N:) and place it inside your manifest file as a ENV property e.g. \nENV: \n  IBM_JVM_LICENSE: {License Number}.\n"
-        raise
-      end
+#      unless LibertyBuildpack::Util.check_license(@license, @license_id)
+#        print "\nYou have not accepted the IBM JVM License.\n\nVisit the following uri:\n#{@license}\n\nExtract the license number (D/N:) and place it inside your manifest file as a ENV property e.g. \nENV: \n  IBM_JVM_LICENSE: {License Number}.\n"
+#        raise
+#      end
 
       # Checks that user has defined a sufficient memory limit
       check_memory
